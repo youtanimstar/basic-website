@@ -10,21 +10,60 @@ html {
   overflow-x: hidden;
 }
 body {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+:root {
+  --background-color: #f2f9f4;
+  --primary-background: #8fd8c5;
+  --secondry-background: #deeee8;
+  --helper-background: #c0dad6;
+  --primary-text-color: #509995;
+  --secondry-text-color: #f2f9f4;
+  --hover-text-color: #48605e;
+}
+.button {
+  padding: 1.2rem 3.2rem;
+  letter-spacing: 5px;
+  color: var(--secondry-text-color);
+  background-color: var(--primary-text-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  border: 5px solid var(--primary-text-color);
+  border-radius: 50px;
+  transition: 0.1s linear;
+  text-transform: uppercase;
 }
 
+.button:hover,
+.button:active {
+  border: 5px solid var(--primary-text-color);
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+}
+
+/* --------------------------global declaration--------------------------------- */
+/* --------------------------header declaration--------------------------------- */
 .header {
   padding: 0 4.8rem;
   height: 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffc23c;
 }
+/* --------------------------logo declaration--------------------------------- */
 .header .logo {
-  height: 3rem;
+  height: 7rem;
 }
-
+.header .logo-background {
+  margin-left: 1rem;
+  height: 100%;
+  width: 10rem;
+  background-color: var(--primary-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* --------------------------navbar declaration--------------------------------- */
 .navbar-list {
   display: flex;
   gap: 4.8rem;
@@ -39,40 +78,194 @@ body {
   font-size: 2rem;
   font-weight: 500;
   transition: all 0.3s linear;
-  color: #fff;
+  color: var(--primary-text-color);
+  z-index: 1;
+  height: 5rem;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .navbar-link:hover,
 .navbar-link:active {
-  color: #100720;
+  color: var(--background-color);
+  background-color: var(--primary-text-color);
 }
 
-.section-hero,
-.section-services {
-  padding: 9.6rem 0;
-  background-color: #ffe6a0;
-  height: 60vh;
+.navbar-background {
+  height: 5rem;
+  width: 95.5%;
+  background-color: var(--secondry-background);
+  position: absolute;
+  left: 6rem;
+  z-index: -1;
+}
 
+/* --------------------------hero-part declaration--------------------------------- */
+.section-hero {
+  padding: 1rem 1rem;
+  height: 85vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-left {
+  height: 60vh;
+  width: 73vh;
+  background-image: url("./images/design1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 35rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.section-services {
-  background-color: #ffffff;
+.yoga-img-one {
+  height: 30vh;
+  width: 30vh;
+  background-image: url("./images/yoga_img_1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-right {
+  height: 60vh;
+  width: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.hero-right h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+}
+.hero-right p {
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--primary-background);
 }
 
-.section-hero p,
-.section-services p {
-  font-size: 3.2rem;
+/* --------------------------hero-part declaration END--------------------------------- */
+
+/* --------------------------section-one declaration--------------------------------- */
+.section-one h1 {
+  font-size: 5rem;
+  color: var(--background-color);
 }
+.section-one {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--primary-text-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.card-section {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-design {
+  height: 40vh;
+  width: 50vh;
+  background-image: url("./images/design2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-img-one {
+  height: 24vh;
+  width: 24vh;
+  background-image: url("./images/yoga_img_2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-img-two {
+  height: 24vh;
+  width: 24vh;
+  background-image: url("./images/yoga_img_3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-img-three {
+  height: 24vh;
+  width: 24vh;
+  background-image: url("./images/yoga_img_4.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70vh;
+  width: 50vh;
+  margin: 5rem;
+  border-radius: 20px;
+  transition: all 0.5s linear;
+  padding: 1rem;
+  border: 0.1px solid #fff;
+}
+.card:hover {
+  box-shadow: 0 0 100px rgb(0, 0, 0);
+  background-color: var(--primary-background);
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.card .button {
+  font-size: 1.5rem;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  border-color: var(--background-color);
+}
+.card .button:hover {
+  border-color: var(--background-color);
+  background-color: var(--primary-text-color);
+  color: var(--background-color);
+}
+
+.section-one h1 {
+  margin: 3rem;
+}
+@media (max-width: 1293px) {
+  .section-one {
+    height: 180vh;
+  }
+}
+
+/* --------------------------section-one declaration END--------------------------------- */
 .mobile-navbar-btn {
   display: none;
   cursor: pointer;
 }
 #mobile-nav-icon {
   font-size: 2rem;
-  color: #fff;
+  color: var(--primary-text-color);
 }
 
 #mobile-nav-icon[class="fa fa-close"] {
@@ -88,12 +281,12 @@ body {
     position: relative;
   }
   .header .logo {
-    height: 1.8rem;
+    height: 6rem;
   }
   .navbar {
     width: 100%;
     height: 100vh;
-    background-color: #ffc23c;
+    background-color: var(--helper-background);
     position: absolute;
     top: 0;
     right: 0;
@@ -129,6 +322,43 @@ body {
   .active .mobile-navbar-btn #mobile-nav-icon[class="fa fa-bars"] {
     display: none;
   }
+
+  .section-hero {
+    height: 125vh;
+  }
+
+  .hero-left {
+    background-size: 30rem;
+  }
+  .yoga-img-one {
+    background-size: 18rem;
+  }
+
+  .section-one {
+    height: 198vh;
+  }
+  .section-one h1 {
+    font-size: 2rem;
+  }
+  .card {
+    width: 30vh;
+    height: 48vh;
+  }
+  .card .card-design {
+    width: 22vh;
+    height: 22vh;
+    background-size: 15rem;
+  }
+  .card .card-design .card-img-one {
+    width: 15vh;
+    height: 15vh;
+  }
+  .card h1 {
+    font-size: 1.5rem;
+  }
+  .card .button {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 35em) {
@@ -136,9 +366,19 @@ body {
     padding: 0 2.4rem;
   }
   .header .logo {
-    height: 1.8rem;
+    height: 5rem;
   }
   .hero p {
     font-size: 2rem;
+  }
+
+  .hero-left {
+    background-size: 30rem;
+  }
+  .hero-right h1 {
+    font-size: 4rem;
+  }
+  .hero-right p {
+    font-size: 1.2rem;
   }
 }
